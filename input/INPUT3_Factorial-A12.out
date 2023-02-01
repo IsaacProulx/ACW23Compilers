@@ -1,0 +1,63 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@                                                               @@@@
+@@          /        ==============================        /         @@
+@         ////           @@       @@  #@                  ////        @
+@         ////*          @@ @%  @ @@     @@  @ #@#       /////        @
+@     ((( ////))))   @@  @% @%  @ @@  #@ @@  @ #@@#   ///////( ///    @
+@     ((((, / )))))   @@@@   @@@  @@  ##  @@@   #@#   ///// ,/////    @
+@     (((((/ )))((   ==============================   ((((./////*     @
+@   *//*./ /  .///   ===  PROGRAMMING LANGUAGE  ===  ////   / ( (//   @
+@    ///// / /////   ==============================  *////* / ////    @
+@     ///// ///// ((                               (( ///// /////     @
+@    ((((/ , (((((                                (((((  //   /(((    @
+@    (((((((/ . (((((                             ((((( */ (((((((    @
+@      (((((( //((((/((((                    *((((/((((/( (((((/      @
+@       .//,   */    (((((                   (((((  ///    .//.       @
+@      ,////////./(  (((((*////         (///(((((( ,/(,////////       @
+@         //////// ,// ((( /////,     ////// ((( //  ///////*         @
+@            (((((((((,//  */////     /////   (//(((((((((            @
+@            (((((((((((  (/////       //.///  (((((((((((.           @
+@                   (///////// //(   (//.//////////                   @
+@                  (/////////             //////////                  @
+@                                                                     @
+@@          A L G O N Q U I N   C O L L E G E  -  2 0 2 3 W          @@
+@@@@                                                               @@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+argv[0] = C:\Users\isaac\source\repos\JuliusCompiler\out\build\x64-Debug\JuliusCompiler.exe
+argv[1] = R
+argv[2] = C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT3_Factorial.jul
+
+[Option 'R': Starting READER .....]
+
+Reading file C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT3_Factorial.jul ....Please wait
+The input file C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT3_Factorial.jul has not been completely loaded.
+Current size of buffer: 250.
+Last character read from the input file is:   32
+Input file size: 362
+
+Printing buffer parameters:
+
+The capacity of the buffer is:  250
+The current size of the buffer is:  250
+The operational mode of the buffer is: F
+The increment factor of the buffer is:  10
+The first symbol in the buffer is:  #
+The value of the flags field is: 40
+Number of different chars read: 44
+Number of errors: 0
+
+Printing buffer contents:
+
+# BOA Example 4:
+  Testing numbers (ex: factorial) #
+main& {
+    data {
+        int i$, n$, f$;
+    }
+    code {
+        f$=1;
+        i$=1;
+        print&('Write a number:');
+        input&(n$);
+        while (i$<n$) do {
+            f$ = f$ * i$;
