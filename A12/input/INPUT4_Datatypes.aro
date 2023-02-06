@@ -1,0 +1,13 @@
+/*
+Arrow Example
+The program is lexically correct about the SOFIA city 
+*/
+function int main() {
+	int FoundationYear = -7000;
+	float Area = 492.0, HDI = 0.871;
+	string CountryName = 'Bulgary';
+	print(CountryName);
+	return 0;
+}
+
+main();

@@ -1,0 +1,12 @@
+/* Arrow Example 4:
+  Testing numbers (ex: factorial) */
+function int main() 
+    int i=1, n, f=1;
+    n = parseInt(input("Write a number: "));
+    while (i<n) do {
+        f *= i;
+        i += 1;
+    };
+    print("Factorial: "..f);
+    return 0;
+}

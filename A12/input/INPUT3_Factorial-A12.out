@@ -1,0 +1,58 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@                                                               @@@@
+@@          /        ==============================        /         @@
+@         ////           @@       @@  #@                  ////        @
+@         ////*          @@ @%  @ @@     @@  @ #@#       /////        @
+@     ((( ////))))   @@  @% @%  @ @@  #@ @@  @ #@@#   ///////( ///    @
+@     ((((, / )))))   @@@@   @@@  @@  ##  @@@   #@#   ///// ,/////    @
+@     (((((/ )))((   ==============================   ((((./////*     @
+@   *//*./ /  .///   ===  PROGRAMMING LANGUAGE  ===  ////   / ( (//   @
+@    ///// / /////   ==============================  *////* / ////    @
+@     ///// ///// ((                               (( ///// /////     @
+@    ((((/ , (((((                                (((((  //   /(((    @
+@    (((((((/ . (((((                             ((((( */ (((((((    @
+@      (((((( //((((/((((                    *((((/((((/( (((((/      @
+@       .//,   */    (((((                   (((((  ///    .//.       @
+@      ,////////./(  (((((*////         (///(((((( ,/(,////////       @
+@         //////// ,// ((( /////,     ////// ((( //  ///////*         @
+@            (((((((((,//  */////     /////   (//(((((((((            @
+@            (((((((((((  (/////       //.///  (((((((((((.           @
+@                   (///////// //(   (//.//////////                   @
+@                  (/////////             //////////                  @
+@                                                                     @
+@@          A L G O N Q U I N   C O L L E G E  -  2 0 2 3 W          @@
+@@@@                                                               @@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+argv[0] = C:\Users\isaac\source\repos\JuliusCompiler\out\build\x64-Debug\ArrowCompiler.exe
+argv[1] = R
+argv[2] = C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT3_Factorial.aro
+
+[Option 'R': Starting READER .....]
+
+Reading file C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT3_Factorial.aro ....Please wait
+
+Printing buffer parameters:
+
+The capacity of the buffer is:  250
+The current size of the buffer is:  251
+The operational mode of the buffer is: F
+The increment factor of the buffer is:  10
+The first symbol in the buffer is:  /
+The value of the flags field is: 00
+Number of different chars read: 45
+Number of errors: 0
+
+Printing buffer contents:
+
+/* Arrow Example 4:
+  Testing numbers (ex: factorial) */
+function int main() 
+    int i=1, n, f=1;
+    n = parseInt(input("Write a number: "));
+    while (i<n) do {
+        f *= i;
+        i += 1;
+    };
+    print("Factorial: "..f);
+    return 0;
+}

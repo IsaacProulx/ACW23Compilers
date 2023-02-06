@@ -1,0 +1,11 @@
+/* Arrow Example 3:
+  Volume of a sphere */
+function int volumeOfSphere() {
+	const float PI = 3.14;
+	const float r = parseFloat(input("Enter Radius of Sphere: "));
+	const float vol = 4.0 / 3.0 * PI * (r**3);
+	print(Vol);
+	return 0;
+}
+
+volumeOfSphere();
