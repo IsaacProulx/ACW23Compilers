@@ -82,7 +82,7 @@ enum READER_MODE {
 #define READER_ERROR (-1)						/* General error message */
 #define READER_TERMINATOR '\0'							/* General EOF */
 
-/* CONSTANTS DEFINITION: PREFIXED BY LANGUAGE NAME (SOFIA) .................................. */
+/* CONSTANTS DEFINITION: PREFIXED BY LANGUAGE NAME .................................. */
 
 /* You should add your own constant definitions here */
 #define READER_MAX_SIZE	INT_MAX-1	/* maximum capacity */ 
@@ -100,54 +100,53 @@ enum READER_MODE {
 
 #define NCHAR				128			/* Chars from 0 to 127 */
 
-/* STRUCTURES DEFINITION: SUFIXED BY LANGUAGE NAME (SOFIA) .................................. */
-
-/* TODO: Adjust datatypes */
+/* STRUCTURES DEFINITION: SUFIXED BY LANGUAGE NAME .................................. */
 
 /* Offset declaration */
 typedef struct position {
-	julius_intg mark;			/* the offset to the mark position (in chars) */
-	julius_intg read;			/* the offset to the get a char position (in chars) */
-	julius_intg wrte;			/* the offset to the add chars (in chars) */
+	arrow_int mark;			/* the offset to the mark position (in chars) */
+	arrow_int read;			/* the offset to the get a char position (in chars) */
+	arrow_int wrte;			/* the offset to the add chars (in chars) */
 } Position;
 
 /* Buffer structure */
 typedef struct bufferReader {
-	julius_char*	content;			/* pointer to the beginning of character array (character buffer) */
-	julius_intg		size;				/* current dynamic memory size (in bytes) allocated to character buffer */
-	julius_intg		increment;			/* character array increment factor */
-	julius_intg		mode;				/* operational mode indicator */
-	julius_byte		flags;				/* contains character array reallocation flag and end-of-buffer flag */
+	arrow_char*		content;			/* pointer to the beginning of character array (character buffer) */
+	arrow_int		size;				/* current dynamic memory size (in bytes) allocated to character buffer */
+	arrow_int		increment;			/* character array increment factor */
+	arrow_int		mode;				/* operational mode indicator */
+	arrow_byte		flags;				/* contains character array reallocation flag and end-of-buffer flag */
 	Position		position;			/* Offset / position field */
-	julius_intg		histogram[NCHAR];	/* Statistics of chars */
-	julius_intg		numReaderErrors;	/* Number of errors from Reader */
+	arrow_int		histogram[NCHAR];	/* Statistics of chars */
+	arrow_int		numReaderErrors;	/* Number of errors from Reader */
 } BufferReader, * ReaderPointer;
 
 /* FUNCTIONS DECLARATION:  .................................. */
 /* General Operations */
-ReaderPointer	readerCreate		(julius_intg, julius_intg, julius_intg);
-ReaderPointer	readerAddChar		(ReaderPointer const, julius_char);
-julius_boln		readerClear		    (ReaderPointer const);
-julius_boln		readerFree		    (ReaderPointer const);
-julius_boln		readerIsFull		(ReaderPointer const);
-julius_boln		readerIsEmpty		(ReaderPointer const);
-julius_boln		readerSetMark		(ReaderPointer const, julius_intg);
-julius_intg		readerPrint		    (ReaderPointer const);
-julius_intg		readerLoad			(ReaderPointer const, FILE* const);
-julius_boln		readerRecover		(ReaderPointer const);
-julius_boln		readerRetract		(ReaderPointer const);
-julius_boln		readerRestore		(ReaderPointer const);
+//intellisense doesn't understand that this is a prototype
+ReaderPointer	readerCreate		(arrow_int, arrow_int, arrow_int);
+ReaderPointer	readerAddChar		(ReaderPointer const, arrow_char);
+arrow_bool		readerClear		    (ReaderPointer const);
+arrow_bool		readerFree		    (ReaderPointer const);
+arrow_bool		readerIsFull		(ReaderPointer const);
+arrow_bool		readerIsEmpty		(ReaderPointer const);
+arrow_bool		readerSetMark		(ReaderPointer const, arrow_int);
+arrow_int		readerPrint		    (ReaderPointer const);
+arrow_int		readerLoad			(ReaderPointer const, FILE* const);
+arrow_bool		readerRecover		(ReaderPointer const);
+arrow_bool		readerRetract		(ReaderPointer const);
+arrow_bool		readerRestore		(ReaderPointer const);
 /* Getters */
-julius_char		readerGetChar		(ReaderPointer const);
-julius_char*	readerGetContent	(ReaderPointer const, julius_intg);
-julius_intg		readerGetPosRead	(ReaderPointer const);
-julius_intg		readerGetPosWrte	(ReaderPointer const);
-julius_intg		readerGetPosMark	(ReaderPointer const);
-julius_intg		readerGetSize		(ReaderPointer const);
-julius_intg		readerGetInc		(ReaderPointer const);
-julius_intg		readerGetMode		(ReaderPointer const);
-julius_byte		readerGetFlags		(ReaderPointer const);
-julius_intg		readerShowStat		(ReaderPointer const);
-julius_intg		readerNumErrors		(ReaderPointer const);
+arrow_char		readerGetChar		(ReaderPointer const);
+arrow_char*		readerGetContent	(ReaderPointer const, arrow_int);
+arrow_int		readerGetPosRead	(ReaderPointer const);
+arrow_int		readerGetPosWrte	(ReaderPointer const);
+arrow_int		readerGetPosMark	(ReaderPointer const);
+arrow_int		readerGetSize		(ReaderPointer const);
+arrow_int		readerGetInc		(ReaderPointer const);
+arrow_int		readerGetMode		(ReaderPointer const);
+arrow_byte		readerGetFlags		(ReaderPointer const);
+arrow_int		readerShowStat		(ReaderPointer const);
+arrow_int		readerNumErrors		(ReaderPointer const);
 
 #endif

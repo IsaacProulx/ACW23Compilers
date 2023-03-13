@@ -94,11 +94,11 @@
  *  Function declarations
  * -------------------------------------------------------------
  */
-julius_void bErrorPrint(julius_char* fmt, ...);
-julius_void displayBuffer(BufferReader* ptr_Buffer);
-julius_long getFileSize(julius_char* fname);
-julius_intg isNumber(const julius_char* ns);
-julius_void startReader(julius_char*, julius_char*, julius_char, julius_intg, julius_intg);
+arrow_void bErrorPrint(arrow_char* fmt, ...);
+arrow_void displayBuffer(BufferReader* ptr_Buffer);
+arrow_int getFileSize(arrow_char* fname);
+arrow_int isNumber(const arrow_char* ns);
+arrow_void startReader(arrow_char*, arrow_char*, arrow_char, arrow_int, arrow_int);
 
 /*
 ************************************************************
@@ -110,13 +110,13 @@ julius_void startReader(julius_char*, julius_char*, julius_char, julius_intg, ju
 ************************************************************
 */
 
-julius_intg mainReader(julius_intg argc, julius_char** argv) {
+arrow_int mainReader(arrow_int argc, arrow_char** argv) {
 
 	/* Create source input buffer */
-	julius_char* program = argv[0];
-	julius_char* input = argv[2];
-	julius_char mode = MODE_FIXED;
-	julius_intg size = 0, increment = 0, wrongNumber = 0;
+	arrow_char* program = argv[0];
+	arrow_char* input = argv[2];
+	arrow_char mode = MODE_FIXED;
+	arrow_int size = 0, increment = 0, wrongNumber = 0;
 
 	/* Missing file name or/and mode parameter */
 	if (argc <= 2) {
@@ -168,12 +168,12 @@ julius_intg mainReader(julius_intg argc, julius_char** argv) {
 *	- Increment: buffer increment.
 ************************************************************
 */
-julius_void startReader(julius_char* program, julius_char* input, julius_char mode, julius_intg size, julius_intg increment) {
+arrow_void startReader(arrow_char* program, arrow_char* input, arrow_char mode, arrow_int size, arrow_int increment) {
 
 	ReaderPointer bufferp;		/* pointer to Buffer structure */
 	FILE* fileHandler;			/* input file handle */
-	julius_intg loadSize = 0;	/* the size of the file loaded in the buffer */
-	julius_char symbol;			/* symbol read from input file */
+	arrow_int loadSize = 0;	/* the size of the file loaded in the buffer */
+	arrow_char symbol;			/* symbol read from input file */
 
 	/* Create buffer */
 	bufferp = readerCreate(size, (char)increment, mode);
@@ -231,12 +231,12 @@ julius_void startReader(julius_char* program, julius_char* input, julius_char mo
 ************************************************************
 */
 
-julius_void bErrorPrint(julius_char* fmt, ...) {
+arrow_void bErrorPrint(arrow_char* fmt, ...) {
 	/* Initialize variable list */
 	va_list ap;
 	va_start(ap, fmt);
 
-	(julius_void)vfprintf(stderr, fmt, ap);
+	(arrow_void)vfprintf(stderr, fmt, ap);
 	va_end(ap);
 
 	/* Move to new line */
@@ -251,7 +251,7 @@ julius_void bErrorPrint(julius_char* fmt, ...) {
 ************************************************************
 */
 
-julius_void displayBuffer(BufferReader* ptr_Buffer) {
+arrow_void displayBuffer(BufferReader* ptr_Buffer) {
 	printf("\nPrinting buffer parameters:\n\n");
 	printf("The capacity of the buffer is:  %d\n",
 		readerGetSize(ptr_Buffer));
@@ -283,9 +283,9 @@ julius_void displayBuffer(BufferReader* ptr_Buffer) {
 ************************************************************
 */
 
-julius_long getFileSize(julius_char* fname) {
+arrow_int getFileSize(arrow_char* fname) {
 	FILE* input;
-	julius_long flength;
+	arrow_int flength;
 	input = fopen(fname, "r");
 	if (input == NULL) {
 		bErrorPrint("%s%s", "Cannot open file: ", fname);
@@ -307,8 +307,8 @@ julius_long getFileSize(julius_char* fname) {
 ************************************************************
 */
 
-julius_intg isNumber(const julius_char* ns) {
-	julius_char c; julius_intg i = 0;
+arrow_int isNumber(const arrow_char* ns) {
+	arrow_char c; arrow_int i = 0;
 	if (ns == NULL) return 0;
 	while ((c = ns[i++]) == 0) {
 		if (!isdigit(c)) return 0;

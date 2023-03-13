@@ -6,12 +6,12 @@
       "name": "Compiler Debug",
       "type": "default",
       "project": "CMakeLists.txt",
-      "projectTarget": "JuliusCompiler.exe",
+      "projectTarget": "ArrowCompiler.exe",
       "args": [
-        "R",
-        "\"D:/Algonquin/level 4/compilers/Isaac853/A12/input/INPUT9_Big.jul\"",
+        "S",
+        "C:/Users/isaac/source/repos/JuliusCompiler/input/INPUT3_Factorial.aro",
         "A",
-        "100",
+        "250",
         "10"
       ]
     }

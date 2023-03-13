@@ -49,7 +49,7 @@
 #ifndef COMPILERS_H_
 #define COMPILERS_H_
 
-#define DEBUG 1
+#define DEBUG 0
 
 /*
  * ............................................................................
@@ -62,8 +62,8 @@
  */
  
 /* Logical constants - adapt for your language */
-#define JULIUS_TRUE  1
-#define JULIUS_FALSE 0
+#define ARROW_TRUE  1
+#define ARROW_FALSE 0
 
 /*
 ------------------------------------------------------------
@@ -74,16 +74,46 @@ NOTE: Some types may not be directly used by your language,
 */
 
 /* TO_DO: Define your typedefs */
-typedef void			julius_void;
-typedef char			julius_char;
-typedef int				julius_intg;
-typedef float			julius_real;
 
-typedef unsigned char	julius_boln;
-typedef unsigned char	julius_byte;
+/* enum of all the types used by the language */
+enum ARROW_TYPES {
+	ARROW_VOID,
+	ARROW_CHAR,
+	ARROW_INT,
+	ARROW_FLOAT,
+	ARROW_BOOL,
+	ARROW_BYTE,
+	ARROW_STRING,
+	ARROW_LIST
+};
 
-typedef long			julius_long;
-typedef double			julius_doub;
+/* type defs */
+typedef void			arrow_void;
+typedef char			arrow_char;
+typedef long		    arrow_int;
+typedef double			arrow_float;
+typedef unsigned char	arrow_bool;
+typedef unsigned char	arrow_byte;
+typedef struct arrow_string arrow_string;
+typedef struct _arrow_list_entry _arrow_list_entry;
+typedef struct arrow_list arrow_list;
+/* custom type structures */
+struct arrow_string{
+	char* content;
+	arrow_int length;
+};
+
+//internal type only used by the compiler (not present in the language)
+struct _arrow_list_entry{
+	arrow_void* item;
+	enum ARROW_TYPES type;
+};
+
+struct arrow_list{
+	struct _arrow_list_entry* items;
+	arrow_int size; //capacity
+	arrow_int length; //number of items
+};
 
 /*
 ------------------------------------------------------------
@@ -105,11 +135,10 @@ Main functions signatures
 (Code will be updated during next assignments)
 ------------------------------------------------------------
 */
-julius_intg mainReader(julius_intg argc, julius_char** argv);
-/*
-julius_intg mainScanner(julius_intg argc, julius_char** argv);
-julius_intg mainParser(julius_intg argc, julius_char** argv);
+arrow_int mainReader(arrow_int argc, arrow_char** argv);
+arrow_int mainScanner(arrow_int argc, arrow_char** argv);
+/*julius_intg mainParser(julius_intg argc, julius_char** argv);
 */
-julius_void printLogo();
+arrow_void printLogo();
 
 #endif

@@ -77,10 +77,9 @@
 *************************************************************
 */
 
-julius_intg main(int argc, char** argv) {
-	//test
-	julius_intg i;
-	julius_char option;
+arrow_int main(int argc, char** argv) {
+	arrow_int i;
+	arrow_char option;
 	printLogo();
 	if (DEBUG) {
 		for (i = 0; i < argc; ++i)
@@ -100,11 +99,11 @@ julius_intg main(int argc, char** argv) {
 		printf("%s%c%s", "\n[Option '", PGM_READER, "': Starting READER .....]\n\n");
 		mainReader(argc, argv);
 		break;
-	/*
 	case PGM_SCANNER:
 		printf("%s%c%s", "\n[Option '", PGM_SCANNER, "': Starting SCANNER ....]\n\n");
 		mainScanner(argc, argv);
 		break;
+	/*
 	case PGM_PARSER:
 		printf("%s%c%s", "\n[Option '", PGM_PARSER, "': Starting PARSER .....]\n\n");
 		mainParser(argc, argv);
@@ -132,7 +131,7 @@ julius_intg main(int argc, char** argv) {
 * Algorithm: -
 *************************************************************
 */
-julius_void printLogo() {
+arrow_void printLogo() {
 	printf("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s",
 		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n",
 		"@@@@                                                               @@@@\n",

@@ -1,0 +1,30 @@
+/* SOFIA Example
+The program is "lexically" correct and should not generate any error (based on Platypus from Svillen Ranev) */
+function int main() {
+	string text;
+	float a = 1.2;
+	float sum008 = 7.87050;
+	a = parseFloat(input());
+	sum008 = parseFloat(input());
+	int i = 0;
+	while (i <= 32767){
+		i += 2;
+		a *= i/0.5 ;
+		sum008 += a - 1 ;
+	}
+	if (text == "") {
+		text = "prog" .. "ram";
+	}
+	else {
+		text = text .. "ram";
+	}
+	print("\* This is a program -:)-<-<-- \*");
+	print(text);
+	//I think '<>' means '!=' : text@ <> 'program'
+	if (text != "program" && sum008==8.0 || i>10) {
+		print(sum008);
+		print();
+	}
+	else{};
+	return 0;
+}

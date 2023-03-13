@@ -1,0 +1,61 @@
+/*A program I wrote to compute sin(x)*/
+
+const PI = 3.1415926535897932384626433832795028841971693993751058209749445923;
+const HALF_PI = PI/2;
+const TAU = PI * 2;
+
+/**
+ * Calculates x to a positive integer power
+ */
+const basicPow = (float x, int n) => {
+    let float result = 1;
+    for(let int i=0; i<n; i++){
+        result*=x;
+    }
+    return result;
+}
+
+const int factorial = (int x) => {
+    let int prod = 1;
+    while(x>1) prod*=x--;
+    return prod;
+}
+
+/**
+ * Computes sin(x) using Maclaurin series
+ */
+const float __sin = (float x) => {
+    //high accuracy for 0<=x<=pi/2
+    let float res = 0;
+    for(let int i=0; i<10; i++){
+        let int n = (i<<1) + 1;
+        let float term = basicPow(x,n)/factorial(n);
+        ((i&1)==0)? res += term: res -= term;
+    }
+    return res;
+}
+
+/**
+ * Converts x to a number inside the accurate range that will produce the same result, and then
+ * returns __sin of it
+ */
+function float sin (float x) {
+    let bool negate = false;
+    //sin is an odd function, we can use this to discard half of all x values
+    if(x<0) x = -x, negate = true;
+    //convert to first period
+    if(x>TAU){
+        const int loopNum = ceil(x/TAU);
+        x -= TAU*(loopNum-1);
+    }
+    //convert to first half-period
+    if(x>PI){
+        negate = !negate;
+        x -= PI;
+    }
+    //convert first half-period to first quarter-period (0-pi -> 0-pi/2)
+    if(x>HALF_PI) x = PI-x;
+    return negate?-__sin(x):__sin(x);
+}
+
+print(sin(1)) //expected output: 0.8414709848078965

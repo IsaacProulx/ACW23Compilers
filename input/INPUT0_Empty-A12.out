@@ -23,13 +23,14 @@
 @@          A L G O N Q U I N   C O L L E G E  -  2 0 2 3 W          @@
 @@@@                                                               @@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-argv[0] = C:\Users\isaac\source\repos\JuliusCompiler\out\build\x64-Debug\JuliusCompiler.exe
+argv[0] = C:\Users\isaac\source\repos\JuliusCompiler\input\..\out\build\x64-Debug\ArrowCompiler.exe
 argv[1] = R
-argv[2] = C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT0_Empty.jul
+argv[2] = C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT0_Empty.aro
+3
 
 [Option 'R': Starting READER .....]
 
-Reading file C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT0_Empty.jul ....Please wait
+Reading file C:\Users\isaac\source\repos\JuliusCompiler\input\INPUT0_Empty.aro ....Please wait
 
 Printing buffer parameters:
 

@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\input",
-    "\\out"
+    ""
   ],
-  "SelectedNode": "\\CMakeLists.txt",
+  "SelectedNode": "\\Compilers.h",
   "PreviewInSolutionExplorer": false
 }
