@@ -1,0 +1,10 @@
+/* Arrow Example 2:
+  The program is "lexically" correct
+  and should not generate any error */
+function int main() {
+	//single line test
+	print("Hello world!");
+	return 0;
+}
+
+main();

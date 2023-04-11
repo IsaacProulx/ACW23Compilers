@@ -1,0 +1,16 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "name": "Compiler Debug",
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "ArrowCompiler.exe",
+      "args": [
+        "S",
+        "D:/Algonquin/level 4/compilers/Isaac853/ArrowCompiler/input/INPUT1_Hello.aro"
+      ]
+    }
+  ]
+}
